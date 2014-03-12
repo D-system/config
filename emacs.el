@@ -35,3 +35,10 @@
 ;; Add color to a shell running in emacs 'M-x shell'
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+;; SCSS mode
+(load "~/config/submodules/scss-mode/scss-mode.el")
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+;; SCSS mode: no auto-compilation at save
+(setq scss-compile-at-save nil)
