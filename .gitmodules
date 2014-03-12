@@ -1,0 +1,3 @@
+[submodule "submodules/scss-mode"]
+	path = submodules/scss-mode
+	url = https://github.com/D-system/scss-mode.git
