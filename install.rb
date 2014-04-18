@@ -21,3 +21,5 @@ list.each do |conf|
     ln_s conf[:src], conf[:desc]
   end
 end
+
+puts "Don't forget to install submodules: `git submodule update`"
