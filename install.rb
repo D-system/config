@@ -5,6 +5,7 @@ include FileUtils
 src_base = '~/config/'
 list = [
         {src: "#{src_base}emacs.el", desc: "~/.emacs"},
+        {src: "#{src_base}zshrc.sh", desc: "~/.zshrc"},
         {src: "#{src_base}gitconfig", desc: "~/.gitconfig"}
        ]
 
