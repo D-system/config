@@ -42,3 +42,9 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 ;; SCSS mode: no auto-compilation at save
 (setq scss-compile-at-save nil)
+
+
+;; php mode
+(load "~/config/submodules/php-mode/php-mode.el")
+(autoload 'php-mode "php-mode")
+(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
