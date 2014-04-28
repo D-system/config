@@ -3,4 +3,4 @@
 	url = http://github.com/antonj/scss-mode.git
 [submodule "submodules/enhanced-ruby-mode"]
 	path = submodules/enhanced-ruby-mode
-	url = https://github.com/D-system/enhanced-ruby-mode
+	url = https://github.com/jacott/Enhanced-Ruby-Mode.git
