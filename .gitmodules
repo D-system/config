@@ -1,3 +1,6 @@
 [submodule "submodules/scss-mode"]
 	path = submodules/scss-mode
 	url = https://github.com/D-system/scss-mode.git
+[submodule "submodules/enhanced-ruby-mode"]
+	path = submodules/enhanced-ruby-mode
+	url = https://github.com/D-system/enhanced-ruby-mode
