@@ -39,9 +39,15 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
  
 # End of lines added by compinstall
  
- 
- 
-alias ls='ls -hG'
+alias ls='ls -h' 
+if [[ `uname` = "Linux" ]]; then
+    # Linux
+    alias ls='ls --color=auto'
+else
+    # Unix
+    alias ls="ls -G"
+fi
+
 alias l='ls -l'
 alias la='l -a'
 alias dir='dir --color=auto'
@@ -55,3 +61,5 @@ alias clean='find . -name "*~" -exec rm {} \; ; find . -name ".directory"  -exec
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^\/]*\//|  /g' -e 's/|  \([^|]\)/\`--\1/g'"
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 alias gitlog='glog'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
