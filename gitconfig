@@ -4,3 +4,6 @@
 
 [alias]
     st = status
+
+[core]
+	excludesfile = ~/config/gitignore_global
