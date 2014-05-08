@@ -49,8 +49,8 @@
 (autoload 'php-mode "php-mode")
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 
-;; php mode
-(load "~/config/submodules/enhanced-ruby-mode/ruby-mode.el")
+;; ruby mode
+(load "~/config/emacs-mode/ruby-mode.el")
 (autoload 'ruby-mode "ruby-mode")
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
 
