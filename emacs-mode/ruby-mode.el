@@ -386,9 +386,7 @@ Emacs to Ruby."
                                 ((= n -1) (insert " "))
                                 ((forward-char)))))
                    (insert coding-system)))
-                ((looking-at "\\s *#.*coding\\s *[:=]"))
-                (t (when ruby-insert-encoding-magic-comment
-                     (insert "# -*- coding: " coding-system " -*-\n"))))))))
+                ((looking-at "\\s *#.*coding\\s *[:=]")))))))
 
 (defun ruby-current-indentation ()
   (save-excursion
