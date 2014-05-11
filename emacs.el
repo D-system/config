@@ -49,11 +49,16 @@
 (autoload 'php-mode "php-mode")
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
 
-;; php mode
-(load "~/config/submodules/enhanced-ruby-mode/ruby-mode.el")
+;; ruby mode
+(load "~/config/emacs-mode/ruby-mode.el")
 (autoload 'ruby-mode "ruby-mode")
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
-
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
 
 ;; emmet mode (html/css shorcut)
 (load "~/config/submodules/emmet-mode/emmet-mode.el")
