@@ -55,3 +55,7 @@
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
 
 
+;; emmet mode (html/css shorcut)
+(load "~/config/submodules/emmet-mode/emmet-mode.el")
+
+
