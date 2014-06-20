@@ -24,4 +24,4 @@ list.each do |conf|
   end
 end
 
-puts "Don't forget to install submodules: `git submodule update`"
+puts "Don't forget to install submodules: `git submodule update --init`"

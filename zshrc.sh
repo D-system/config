@@ -50,7 +50,7 @@ else
     alias ls="ls -G"
 fi
 
-alias l='ls -l'
+alias l='ls -lh'
 alias la='l -a'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
