@@ -63,5 +63,7 @@ alias clean='find . -name "*~" -exec rm {} \; ; find . -name ".directory"  -exec
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^\/]*\//|  /g' -e 's/|  \([^|]\)/\`--\1/g'"
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 alias gitlog='glog'
+alias clone_site='wget --mirror --convert-links --backup-converted --no-clobber --adjust-extension --wait=5 --limit-rate=20k' # shorter equivalent: 'wget -m -k -K -nc -E -w --limit-rate=20k'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/opt/local/bin # Macport directory
