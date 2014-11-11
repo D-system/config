@@ -63,5 +63,6 @@ alias clean='find . -name "*~" -exec rm {} \; ; find . -name ".directory"  -exec
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^\/]*\//|  /g' -e 's/|  \([^|]\)/\`--\1/g'"
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 alias gitlog='glog'
+alias be='bundle exec'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
