@@ -65,3 +65,6 @@
 
 (load "~/config/submodules/emacs-git-gutter/git-gutter.el")
 (global-git-gutter-mode +1)
+
+(load "~/config/submodules/yaml-mode/yaml-mode.el")
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
