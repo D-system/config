@@ -7,3 +7,6 @@
 [submodule "submodules/emmet-mode"]
 	path = submodules/emmet-mode
 	url = https://github.com/smihica/emmet-mode.git
+[submodule "submodules/emacs-git-gutter"]
+	path = submodules/emacs-git-gutter
+	url = https://github.com/syohex/emacs-git-gutter.git

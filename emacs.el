@@ -63,4 +63,5 @@
 ;; emmet mode (html/css shorcut)
 (load "~/config/submodules/emmet-mode/emmet-mode.el")
 
-
+(load "~/config/submodules/emacs-git-gutter/git-gutter.el")
+(global-git-gutter-mode +1)
