@@ -61,7 +61,7 @@ alias egrep='egrep --color=auto'
 alias emacs='emacs -nw'
 alias clean='find . -name "*~" -exec rm {} \; ; find . -name ".directory"  -exec rm {} \;'
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^\/]*\//|  /g' -e 's/|  \([^|]\)/\`--\1/g'"
-alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gitlog='glog'
 alias be='bundle exec'
 
