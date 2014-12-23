@@ -7,7 +7,7 @@ setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-export EDITOR=emacs
+export EDITOR="emacs -nw"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -61,9 +61,10 @@ alias egrep='egrep --color=auto'
 alias emacs='emacs -nw'
 alias clean='find . -name "*~" -exec rm {} \; ; find . -name ".directory"  -exec rm {} \;'
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^\/]*\//|  /g' -e 's/|  \([^|]\)/\`--\1/g'"
-alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gitlog='glog'
 alias clone_site='wget --mirror --convert-links --backup-converted --no-clobber --adjust-extension --wait=5 --limit-rate=20k' # shorter equivalent: 'wget -m -k -K -nc -E -w --limit-rate=20k'
+alias be='bundle exec'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt/local/bin # Macport directory
