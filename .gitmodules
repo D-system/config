@@ -10,3 +10,6 @@
 [submodule "submodules/yaml-mode"]
 	path = submodules/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "submodules/scm_breeze"]
+	path = submodules/scm_breeze
+	url = https://github.com/ndbroadbent/scm_breeze

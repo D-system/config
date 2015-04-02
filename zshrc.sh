@@ -68,3 +68,5 @@ alias be='bundle exec'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/opt/local/bin # Macport directory
+
+[ -s "$HOME/config/submodules/scm_breeze/scm_breeze.sh" ] && source "$HOME/config/submodules/scm_breeze/scm_breeze.sh"
