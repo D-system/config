@@ -38,10 +38,10 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
- 
+
 # End of lines added by compinstall
- 
-alias ls='ls -h' 
+
+alias ls='ls -h'
 if [[ `uname` = "Linux" ]]; then
     # Linux
     alias ls='ls --color=auto'
@@ -54,7 +54,7 @@ alias l='ls -lh'
 alias la='l -a'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
- 
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
