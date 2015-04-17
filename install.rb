@@ -27,3 +27,11 @@ end
 puts 'Installing/updating git submodules...'
 %x{ git submodule update --init }
 puts 'Done.'
+
+puts 'brew install the_silver_searcher'
+`brew install the_silver_searcher`
+puts 'Done'
+
+puts 'gem install git-up'
+`gem install git-up`
+puts 'Done'
