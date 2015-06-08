@@ -2,6 +2,8 @@
 require 'fileutils'
 include FileUtils
 
+linux = ! RUBY_PLATFORM.match("linux").nil?
+
 src_base = '~/config/'
 list = [
         {src: "#{src_base}emacs.el", desc: "~/.emacs"},
@@ -28,8 +30,13 @@ puts 'Installing/updating git submodules...'
 %x{ git submodule update --init }
 puts 'Done.'
 
-puts 'brew install the_silver_searcher'
-`brew install the_silver_searcher`
+if linux
+  puts 'sudo apt-get install -y silversearcher-ag'
+  `sudo apt-get install -y silversearcher-ag`
+else
+  puts 'brew install the_silver_searcher'
+  `brew install the_silver_searcher`
+end
 puts 'Done'
 
 puts 'gem install git-up'
