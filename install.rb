@@ -4,6 +4,11 @@ include FileUtils
 
 linux = ! RUBY_PLATFORM.match("linux").nil?
 
+def run_cmd(cmd)
+  puts cmd
+  `#{cmd}`
+end
+
 src_base = '~/config/'
 list = [
         {src: "#{src_base}emacs.el", desc: "~/.emacs"},
@@ -31,11 +36,9 @@ puts 'Installing/updating git submodules...'
 puts 'Done.'
 
 if linux
-  puts 'sudo apt-get install -y silversearcher-ag'
-  `sudo apt-get install -y silversearcher-ag`
+  run_cmd 'sudo apt-get install -y silversearcher-ag htop screen emacs24-nox git zsh'
 else
-  puts 'brew install the_silver_searcher'
-  `brew install the_silver_searcher`
+  run_cmd 'brew install the_silver_searcher'
 end
 puts 'Done'
 
