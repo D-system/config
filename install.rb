@@ -7,6 +7,14 @@ linux = ! RUBY_PLATFORM.match("linux").nil?
 def run_cmd(cmd)
   puts cmd
   `#{cmd}`
+  puts 'Done.'
+end
+
+def homebrew_not_installed
+  `brew help`
+  false
+rescue
+  true
 end
 
 src_base = '~/config/'
@@ -32,16 +40,18 @@ list.each do |conf|
 end
 
 puts 'Installing/updating git submodules...'
-%x{ git submodule update --init }
+run_cmd 'git submodule update --init'
 puts 'Done.'
 
 if linux
   run_cmd 'sudo apt-get install -y silversearcher-ag htop screen emacs24-nox git zsh'
 else
   run_cmd 'brew install the_silver_searcher'
+  if homebrew_not_installed
+    puts 'Please run the command to install Homebrew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+    exit
+  end
+  run_cmd 'brew install the_silver_searcher'
 end
-puts 'Done'
 
-puts 'gem install git-up'
-`gem install git-up`
-puts 'Done'
+run_cmd 'gem install git-up'
