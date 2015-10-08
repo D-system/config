@@ -65,3 +65,18 @@
 
 (load "~/config/submodules/yaml-mode/yaml-mode.el")
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+(load "~/config/submodules/emacs-git-gutter/git-gutter.el")
+(global-git-gutter-mode +1)
+(custom-set-variables
+ '(git-gutter:update-interval 1))
+(set-face-background 'git-gutter:modified "purple")
+(set-face-background 'git-gutter:added "green")
+(set-face-background 'git-gutter:deleted "red")
+(set-face-foreground 'git-gutter:modified "white")
+(set-face-foreground 'git-gutter:added "white")
+(set-face-foreground 'git-gutter:deleted "white")
+
+;; (custom-set-variables
+;;  '(git-gutter:unchanged-sign " "))
+;; (set-face-background 'git-gutter:unchanged "gray")
