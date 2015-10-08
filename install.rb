@@ -48,10 +48,19 @@ if linux
 else
   run_cmd 'brew install the_silver_searcher'
   if homebrew_not_installed
-    puts 'Please run the command to install Homebrew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+    puts 'Please run the command to install Homebrew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ; brew install caskroom/cask/brew-cask ; brew cask help'
     exit
   end
   run_cmd 'brew install the_silver_searcher'
+  # run_cmd 'brew cask install google-chrome'
+  # run_cmd 'brew cask install firefox'
+  # run_cmd 'brew cask install skitch'
+  # run_cmd 'brew cask install hipchat'
+  # run_cmd 'brew cask install vlc'
+  # run_cmd 'brew cask install sourcetree'
+  # run_cmd 'brew cask install sequel-pro'
+  # run_cmd 'brew cask install imageoptim'
+  # run_cmd 'brew cask install virtualbox'
 end
 
 run_cmd 'gem install git-up'
