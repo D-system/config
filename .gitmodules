@@ -16,3 +16,6 @@
 [submodule "submodules/emacs-git-gutter"]
 	path = submodules/emacs-git-gutter
 	url = https://github.com/syohex/emacs-git-gutter.git
+[submodule "submodules/zsh-git-prompt"]
+	path = submodules/zsh-git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
