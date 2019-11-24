@@ -59,6 +59,7 @@ else
   # run_cmd 'brew cask install vlc'
   # run_cmd 'brew cask install sourcetree'
   # run_cmd 'brew cask install sequel-pro'
+  # run_cmd 'brew cask install postico'
   # run_cmd 'brew cask install imageoptim'
   # run_cmd 'brew cask install virtualbox'
 end
