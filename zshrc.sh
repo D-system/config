@@ -1,6 +1,8 @@
 autoload -Uz promptinit
 promptinit
+
 setopt prompt_subst
+setopt interactivecomments
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' stagedstr 'M'
 zstyle ':vcs_info:*' unstagedstr 'M'
@@ -25,7 +27,9 @@ setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-export EDITOR="emacs -nw"
+# export EDITOR="emacs -nw"
+# export EDITOR="sublime -w"
+export EDITOR="code --wait"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -67,6 +71,8 @@ else
     alias ls="ls -G"
 fi
 
+[ -s "/Users/thomas/.scm_breeze/scm_breeze.sh" ] && source "/Users/thomas/.scm_breeze/scm_breeze.sh"
+
 alias l='ls -lh'
 alias la='l -a'
 alias dir='dir --color=auto'
@@ -82,8 +88,34 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias gitlog='glog'
 alias clone_site='wget --mirror --convert-links --backup-converted --no-clobber --adjust-extension --wait=5 --limit-rate=20k' # shorter equivalent: 'wget -m -k -K -nc -E -w --limit-rate=20k'
 alias be='bundle exec'
+alias r='rails'
+alias rr='rake routes'
+alias s="sublime"
+alias c="code"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/opt/local/bin # Macport directory
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:/opt/local/bin # Macport directory
+export PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
-[ -s "$HOME/config/submodules/scm_breeze/scm_breeze.sh" ] && source "$HOME/config/submodules/scm_breeze/scm_breeze.sh"
+export PKG_CONFIG_PATH=/usr/local/Cellar/imagemagick\@6/6.9.10-11/lib/pkgconfig/
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+
+# For localhost dev
+export PATH="$PATH:/Users/thomas/projects/flutter/bin"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="$PATH:/Users/thomas/Library/Python/2.7/bin"
+export PATH="./bin:$PATH"
+export PATH="/Users/thomas/go/bin/:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+
+export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
