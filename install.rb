@@ -32,7 +32,7 @@ list.each do |conf|
 end
 
 list.each do |conf|
-  if File.exists? conf[:desc]
+  if File.exist? conf[:desc]
     puts "File #{conf[:desc]} exists."
   else
     ln_s conf[:src], conf[:desc]
