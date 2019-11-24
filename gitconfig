@@ -1,13 +1,14 @@
 [user]
-	name = Thomas Brennetot
-	email = thomas.brennetot@gmail.com
-
-[alias]
-    st = status
-
+  name = Thomas Brennetot
+  email = thomas.brennetot@gmail.com
 [core]
-	excludesfile = ~/config/gitignore_global
-  editor = sublime -w
+  editor = code --wait
 
 [commit]
   verbose = true
+
+[diff]
+  tool = vscode
+
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
