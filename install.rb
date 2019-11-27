@@ -67,6 +67,7 @@ else
   run_cmd 'brew cask install selfcontrol'
   run_cmd 'brew cask install nordvpn'
   run_cmd 'brew cask install spotify'
+  run_cmd 'brew cask install divvy'
   # run_cmd 'brew cask install obs'
   # run_cmd 'brew cask install molotov'
   # run_cmd 'brew cask install skype'
