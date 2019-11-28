@@ -71,7 +71,7 @@ else
     alias ls="ls -G"
 fi
 
-[ -s "/Users/thomas/.scm_breeze/scm_breeze.sh" ] && source "/Users/thomas/.scm_breeze/scm_breeze.sh"
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 alias l='ls -lh'
 alias la='l -a'
@@ -107,11 +107,11 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 # For localhost dev
-export PATH="$PATH:/Users/thomas/projects/flutter/bin"
+export PATH="$PATH:$HOME/projects/flutter/bin"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export PATH="$PATH:/Users/thomas/Library/Python/2.7/bin"
+export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 export PATH="./bin:$PATH"
-export PATH="/Users/thomas/go/bin/:$PATH"
+export PATH="$HOME/go/bin/:$PATH"
 
 export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/libxml2/include"
