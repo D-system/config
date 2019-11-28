@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'fileutils'
 include FileUtils
 
-linux = ! RUBY_PLATFORM.match("linux").nil?
+linux = !RUBY_PLATFORM.match('linux').nil?
 
 def run_cmd(cmd)
   puts cmd
@@ -13,22 +15,22 @@ end
 def homebrew_not_installed
   `brew help`
   false
-rescue
+rescue StandardError
   true
 end
 
 src_base = '~/config/'
 list = [
-        {src: "#{src_base}emacs.el", desc: "~/.emacs"},
-        {src: "#{src_base}zshrc.sh", desc: "~/.zshrc"},
-        {src: "#{src_base}gitconfig", desc: "~/.gitconfig"},
-        {src: "#{src_base}gemrc", desc: "~/.gemrc"}
-       ]
+  { src: "#{src_base}emacs.el", desc: '~/.emacs' },
+  { src: "#{src_base}zshrc.sh", desc: '~/.zshrc' },
+  { src: "#{src_base}gitconfig", desc: '~/.gitconfig' },
+  { src: "#{src_base}gemrc", desc: '~/.gemrc' }
+]
 
 # Convert to absolute path
 list.each do |conf|
-  conf[:desc] = File.expand_path( conf[:desc] )
-  conf[:src] = File.expand_path( conf[:src] )
+  conf[:desc] = File.expand_path(conf[:desc])
+  conf[:src] = File.expand_path(conf[:src])
 end
 
 list.each do |conf|
