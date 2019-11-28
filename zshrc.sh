@@ -109,7 +109,6 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 # For localhost dev
 export PATH="$PATH:$HOME/projects/flutter/bin"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 export PATH="./bin:$PATH"
 export PATH="$HOME/go/bin/:$PATH"
 
