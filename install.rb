@@ -67,7 +67,7 @@ else
   run_cmd 'brew cask install docker'
   run_cmd 'brew cask install slack'
   run_cmd 'brew cask install selfcontrol'
-  run_cmd 'brew cask install nordvpn'
+  # run_cmd 'brew cask install nordvpn'
   run_cmd 'brew cask install spotify'
   run_cmd 'brew cask install divvy'
   # run_cmd 'brew cask install obs'
