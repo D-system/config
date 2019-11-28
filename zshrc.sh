@@ -119,3 +119,8 @@ export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export PATH="$(pyenv root)/shims:$PATH"

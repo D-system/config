@@ -53,6 +53,7 @@ else
   end
   run_cmd 'brew install the_silver_searcher'
   run_cmd 'brew install rbenv'
+  run_cmd 'brew install pyenv'
   run_cmd 'brew cask install google-chrome'
   run_cmd 'brew cask install firefox'
   run_cmd 'brew cask install skitch'
