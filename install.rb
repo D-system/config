@@ -85,4 +85,4 @@ else
 end
 
 run_cmd 'gem install git-up'
-run_cmd 'git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze'
+run_cmd 'git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh'
