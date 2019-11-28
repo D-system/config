@@ -46,11 +46,11 @@ puts 'Done.'
 if linux
   run_cmd 'sudo apt-get install -y silversearcher-ag htop screen emacs24-nox git zsh'
 else
-  run_cmd 'brew install the_silver_searcher'
   if homebrew_not_installed
     puts 'Please run the command to install Homebrew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ; brew install caskroom/cask/brew-cask ; brew cask help'
     exit
   end
+
   run_cmd 'brew install the_silver_searcher'
 
   run_cmd 'brew install rbenv'
