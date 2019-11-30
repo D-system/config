@@ -53,6 +53,7 @@ else
     exit
   end
 
+  run_cmd 'brew install mysql'
   run_cmd 'brew install the_silver_searcher'
 
   run_cmd 'brew install rbenv'
