@@ -59,6 +59,10 @@ else
   run_cmd 'brew install v8-315' # For therubyracer
   run_cmd 'brew install the_silver_searcher'
 
+  run_cmd 'brew install nvm'
+  run_cmd 'mkdir ~/.nvm'
+  run_cmd 'nvm install 12.13.1' # LTS version
+
   run_cmd 'brew install rbenv'
   ruby_version = '2.6.5'
   run_cmd "rbenv install #{ruby_version}"
