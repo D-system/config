@@ -54,6 +54,8 @@ else
   end
 
   run_cmd 'brew install mysql'
+  run_cmd 'brew install postgresql'
+  run_cmd 'brew link --force postgresql'
   run_cmd 'brew install the_silver_searcher'
 
   run_cmd 'brew install rbenv'
