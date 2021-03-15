@@ -90,7 +90,8 @@ alias clone_site='wget --mirror --convert-links --backup-converted --no-clobber 
 alias be='bundle exec'
 alias r='rails'
 alias rr='rake routes'
-alias s="sublime"
+alias berr='bundle exec rake routes'
+alias s="subl"
 alias c="code"
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -126,3 +127,15 @@ export PATH="$(pyenv root)/shims:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+
+export PATH="$PATH:$HOME/flutter/bin"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+go_test() {
+  go test $* | sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/SKIP/s//$(printf "\033[34mSKIP\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'' | GREP_COLOR="01;33" egrep --color=always '\s*[a-zA-Z0-9\-_.]+[:][0-9]+[:]|^'
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(starship init zsh)"

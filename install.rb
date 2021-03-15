@@ -49,52 +49,57 @@ if linux
   run_cmd 'sudo apt-get install -y silversearcher-ag htop screen emacs24-nox git zsh'
 else
   if homebrew_not_installed
-    puts 'Please run the command to install Homebrew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ; brew install caskroom/cask/brew-cask ; brew cask help'
+    puts 'Please run the command to install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
     exit
   end
 
   run_cmd 'brew install mysql'
   run_cmd 'brew install postgresql'
   run_cmd 'brew link --force postgresql'
-  run_cmd 'brew install v8-315' # For therubyracer
-  run_cmd 'brew install the_silver_searcher'
+  # run_cmd 'brew install v8-315' # For therubyracer
+  run_cmd 'brew install the_silver_searcher' # ag
+  # run_cmd 'brew install graphviz'
+  run_cmd 'brew install lazydocker'
+  run_cmd 'brew install ripgrep' # rg
+  run_cmd 'brew install fd'
+  run_cmd 'brew install starship'
 
   run_cmd 'brew install nvm'
   run_cmd 'mkdir ~/.nvm'
   run_cmd 'nvm install 12.13.1' # LTS version
 
   run_cmd 'brew install rbenv'
-  ruby_version = '2.6.5'
+  ruby_version = '3.0.0'
   run_cmd "rbenv install #{ruby_version}"
   run_cmd "rbenv global #{ruby_version}"
 
   run_cmd 'brew install pyenv'
-  python_version = '3.8.0'
+  python_version = '3.9.1'
   run_cmd "pyenv install #{python_version}"
   run_cmd "pyenv global #{python_version}"
 
-  run_cmd 'brew cask install google-chrome'
-  run_cmd 'brew cask install firefox'
-  run_cmd 'brew cask install skitch'
-  run_cmd 'brew cask install vlc'
-  # run_cmd 'brew cask install sourcetree'
-  run_cmd 'brew cask install sequel-pro'
-  run_cmd 'brew cask install postico'
-  # run_cmd 'brew cask install imageoptim'
-  run_cmd 'brew cask install visual-studio-code'
-  run_cmd 'brew cask install sublime-text'
-  run_cmd 'brew cask install docker'
-  run_cmd 'brew cask install slack'
-  run_cmd 'brew cask install selfcontrol'
-  run_cmd 'brew cask install spotify'
-  run_cmd 'brew cask install divvy'
-  # run_cmd 'brew cask install obs'
-  # run_cmd 'brew cask install molotov'
-  # run_cmd 'brew cask install skype'
+  run_cmd 'brew install --cask google-chrome'
+  run_cmd 'brew install --cask firefox'
+  run_cmd 'brew install --cask skitch'
+  run_cmd 'brew install --cask vlc'
+  # run_cmd 'brew install --cask sourcetree'
+  run_cmd 'brew install --cask sequel-pro'
+  run_cmd 'brew install --cask postico'
+  # run_cmd 'brew install --cask imageoptim'
+  run_cmd 'brew install --cask visual-studio-code'
+  run_cmd 'brew install --cask sublime-text'
+  run_cmd 'brew install --cask docker'
+  run_cmd 'brew install --cask slack'
+  run_cmd 'brew install --cask selfcontrol'
+  run_cmd 'brew install --cask spotify'
+  run_cmd 'brew install --cask divvy'
+  # run_cmd 'brew install --cask obs'
+  # run_cmd 'brew install --cask molotov'
+  # run_cmd 'brew install --cask skype'
 
   run_cmd 'xcode-select --install'
   run_cmd 'sudo xcodebuild -license'
-  run_cmd 'brew cask install nordvpn'
+  run_cmd 'brew install --cask nordvpn'
 end
 
 run_cmd 'gem install git-up'
