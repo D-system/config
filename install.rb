@@ -53,9 +53,9 @@ else
     exit
   end
 
-  run_cmd 'brew install mysql'
-  run_cmd 'brew install postgresql'
-  run_cmd 'brew link --force postgresql'
+#   run_cmd 'brew install mysql'
+#   run_cmd 'brew install postgresql'
+#   run_cmd 'brew link --force postgresql'
   # run_cmd 'brew install v8-315' # For therubyracer
   run_cmd 'brew install the_silver_searcher' # ag
   # run_cmd 'brew install graphviz'
@@ -66,15 +66,15 @@ else
 
   run_cmd 'brew install nvm'
   run_cmd 'mkdir ~/.nvm'
-  run_cmd 'nvm install 12.13.1' # LTS version
+  run_cmd 'nvm install 16.14.2' # LTS version
 
   run_cmd 'brew install rbenv'
-  ruby_version = '3.0.0'
+  ruby_version = '3.1.2'
   run_cmd "rbenv install #{ruby_version}"
   run_cmd "rbenv global #{ruby_version}"
 
   run_cmd 'brew install pyenv'
-  python_version = '3.9.1'
+  python_version = '3.10.4'
   run_cmd "pyenv install #{python_version}"
   run_cmd "pyenv global #{python_version}"
 
@@ -99,8 +99,8 @@ else
 
   run_cmd 'xcode-select --install'
   run_cmd 'sudo xcodebuild -license'
-  run_cmd 'brew install --cask nordvpn'
+#   run_cmd 'brew install --cask nordvpn'
 end
 
 run_cmd 'gem install git-up'
-run_cmd 'git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh'
+run_cmd 'git clone git@github.com:scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh'
