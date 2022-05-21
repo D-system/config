@@ -59,17 +59,6 @@ else
     exit
   end
 
-#   run_cmd 'brew install mysql'
-#   run_cmd 'brew install postgresql'
-#   run_cmd 'brew link --force postgresql'
-  # run_cmd 'brew install v8-315' # For therubyracer
-  run_cmd 'brew install the_silver_searcher' # ag
-  # run_cmd 'brew install graphviz'
-  run_cmd 'brew install lazydocker'
-  run_cmd 'brew install ripgrep' # rg
-  run_cmd 'brew install fd'
-  run_cmd 'brew install starship'
-
   run_cmd 'brew install nvm'
   run_cmd 'mkdir ~/.nvm'
   run_cmd 'nvm install 16.14.2' # LTS version
@@ -84,28 +73,32 @@ else
   run_cmd "pyenv install #{python_version}"
   run_cmd "pyenv global #{python_version}"
 
-  run_cmd 'brew install --cask google-chrome'
-  run_cmd 'brew install --cask firefox'
-  run_cmd 'brew install --cask skitch'
-  run_cmd 'brew install --cask vlc'
-  # run_cmd 'brew install --cask sourcetree'
-  run_cmd 'brew install --cask sequel-pro'
-  run_cmd 'brew install --cask postico'
-  # run_cmd 'brew install --cask imageoptim'
-  run_cmd 'brew install --cask visual-studio-code'
-  run_cmd 'brew install --cask sublime-text'
-  run_cmd 'brew install --cask docker'
-  run_cmd 'brew install --cask slack'
-  run_cmd 'brew install --cask selfcontrol'
-  run_cmd 'brew install --cask spotify'
-  run_cmd 'brew install --cask divvy'
-  # run_cmd 'brew install --cask obs'
-  # run_cmd 'brew install --cask molotov'
-  # run_cmd 'brew install --cask skype'
 
-  run_cmd 'xcode-select --install'
-  run_cmd 'sudo xcodebuild -license'
-#   run_cmd 'brew install --cask nordvpn'
+  run_cmd_multiline %{
+    brew install
+      the_silver_searcher
+      ripgrep
+      fd
+      starship
+      jq
+  }
+
+  run_cmd_multiline %{
+    brew install --cask
+      google-chrome
+      visual-studio-code
+      docker
+      slack
+      rectangle
+      tableplus
+
+      # skitch
+      # vlc
+      # sourcetree
+      # sequel-pro
+      # postico
+  }
+  run_cmd 'xcode-select --install' # install command line tools
 end
 
 run_cmd 'gem install git-up'
