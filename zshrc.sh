@@ -27,7 +27,6 @@ setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-# export EDITOR="emacs -nw"
 # export EDITOR="sublime -w"
 export EDITOR="code --wait"
 
@@ -81,7 +80,6 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias emacs='emacs -nw'
 alias clean='find . -name "*~" -exec rm {} \; ; find . -name ".directory"  -exec rm {} \;'
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^\/]*\//|  /g' -e 's/|  \([^|]\)/\`--\1/g'"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
