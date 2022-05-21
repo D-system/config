@@ -36,7 +36,6 @@ end
 src_base = Dir.getwd
 home_dir = Dir.home
 list = [
-  { src: "#{src_base}/emacs.el",  desc: "#{home_dir}/.emacs"     },
   { src: "#{src_base}/zshrc.sh",  desc: "#{home_dir}/.zshrc"     },
   { src: "#{src_base}/gitconfig", desc: "#{home_dir}/.gitconfig" },
   { src: "#{src_base}/gemrc",     desc: "#{home_dir}/.gemrc"     },
@@ -49,10 +48,6 @@ list.each do |conf|
     ln_s conf[:src], conf[:desc]
   end
 end
-
-puts 'Installing/updating git submodules...'
-run_cmd 'git submodule update --init'
-puts 'Done.'
 
 run_cmd 'brew install nvm'
 run_cmd 'mkdir ~/.nvm'
