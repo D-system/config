@@ -30,19 +30,14 @@ rescue StandardError
   true
 end
 
-src_base = '~/config/'
+src_base = Dir.getwd
+home_dir = Dir.home
 list = [
-  { src: "#{src_base}emacs.el", desc: '~/.emacs' },
-  { src: "#{src_base}zshrc.sh", desc: '~/.zshrc' },
-  { src: "#{src_base}gitconfig", desc: '~/.gitconfig' },
-  { src: "#{src_base}gemrc", desc: '~/.gemrc' }
+  { src: "#{src_base}/emacs.el",  desc: "#{home_dir}/.emacs"     },
+  { src: "#{src_base}/zshrc.sh",  desc: "#{home_dir}/.zshrc"     },
+  { src: "#{src_base}/gitconfig", desc: "#{home_dir}/.gitconfig" },
+  { src: "#{src_base}/gemrc",     desc: "#{home_dir}/.gemrc"     },
 ]
-
-# Convert to absolute path
-list.each do |conf|
-  conf[:desc] = File.expand_path(conf[:desc])
-  conf[:src] = File.expand_path(conf[:src])
-end
 
 list.each do |conf|
   if File.exist? conf[:desc]
