@@ -4,8 +4,6 @@
 require 'fileutils'
 include FileUtils
 
-linux = !RUBY_PLATFORM.match('linux').nil?
-
 def run_cmd(cmd)
   puts cmd
   `#{cmd}`
@@ -51,55 +49,51 @@ puts 'Installing/updating git submodules...'
 run_cmd 'git submodule update --init'
 puts 'Done.'
 
-if linux
-  run_cmd 'sudo apt-get install -y silversearcher-ag htop screen emacs24-nox git zsh'
-else
-  if homebrew_not_installed
-    puts 'Please run the command to install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-    exit
-  end
-
-  run_cmd 'brew install nvm'
-  run_cmd 'mkdir ~/.nvm'
-  run_cmd 'nvm install 16.14.2' # LTS version
-
-  run_cmd 'brew install rbenv'
-  ruby_version = '3.1.2'
-  run_cmd "rbenv install #{ruby_version}"
-  run_cmd "rbenv global #{ruby_version}"
-
-  run_cmd 'brew install pyenv'
-  python_version = '3.10.4'
-  run_cmd "pyenv install #{python_version}"
-  run_cmd "pyenv global #{python_version}"
-
-
-  run_cmd_multiline %{
-    brew install
-      the_silver_searcher
-      ripgrep
-      fd
-      starship
-      jq
-  }
-
-  run_cmd_multiline %{
-    brew install --cask
-      google-chrome
-      visual-studio-code
-      docker
-      slack
-      rectangle
-      tableplus
-
-      # skitch
-      # vlc
-      # sourcetree
-      # sequel-pro
-      # postico
-  }
-  run_cmd 'xcode-select --install' # install command line tools
+if homebrew_not_installed
+  puts 'Please run the command to install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+  exit
 end
+
+run_cmd 'brew install nvm'
+run_cmd 'mkdir ~/.nvm'
+run_cmd 'nvm install 16.14.2' # LTS version
+
+run_cmd 'brew install rbenv'
+ruby_version = '3.1.2'
+run_cmd "rbenv install #{ruby_version}"
+run_cmd "rbenv global #{ruby_version}"
+
+run_cmd 'brew install pyenv'
+python_version = '3.10.4'
+run_cmd "pyenv install #{python_version}"
+run_cmd "pyenv global #{python_version}"
+
+
+run_cmd_multiline %{
+  brew install
+    the_silver_searcher
+    ripgrep
+    fd
+    starship
+    jq
+}
+
+run_cmd_multiline %{
+  brew install --cask
+    google-chrome
+    visual-studio-code
+    docker
+    slack
+    rectangle
+    tableplus
+
+    # skitch
+    # vlc
+    # sourcetree
+    # sequel-pro
+    # postico
+}
+run_cmd 'xcode-select --install' # install command line tools
 
 run_cmd 'gem install git-up'
 run_cmd 'git clone git@github.com:scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh'
