@@ -12,6 +12,17 @@ def run_cmd(cmd)
   puts 'Done.'
 end
 
+def run_cmd_multiline(cmd)
+  # Remove commented lines
+  cmd.lines.map! do |line|
+    striped = line.strip
+
+    striped[0] == "#" ? "" : striped
+  end
+
+  run_cmd(cmd.gsub("\n", " "))
+end
+
 def homebrew_not_installed
   `brew help`
   false
