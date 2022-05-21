@@ -28,6 +28,11 @@ rescue StandardError
   true
 end
 
+if homebrew_not_installed
+  puts 'Please run the command to install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+  exit
+end
+
 src_base = Dir.getwd
 home_dir = Dir.home
 list = [
@@ -48,11 +53,6 @@ end
 puts 'Installing/updating git submodules...'
 run_cmd 'git submodule update --init'
 puts 'Done.'
-
-if homebrew_not_installed
-  puts 'Please run the command to install Homebrew: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
-  exit
-end
 
 run_cmd 'brew install nvm'
 run_cmd 'mkdir ~/.nvm'
