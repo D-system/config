@@ -22,6 +22,7 @@ brew install --cask \
     xnapper \
     hiddenbar \
     dash@6 \
+    rectangle \
     # flameshot \
 
 cp $CURRENT_DIR/zshrc.sh ~/.zshrc
