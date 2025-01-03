@@ -7,7 +7,7 @@ CURRENT_DIR=$( dirname -- "$( readlink -f -- "$0"; )" );
 git clone git@github.com:scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh
 
 # Install command line tools
-brew install the_silver_searcher ripgrep fd starship jq eza bat fzf
+brew install the_silver_searcher ripgrep fd starship jq eza bat fzf pygitup
 
 brew install --cask \
     google-chrome \
