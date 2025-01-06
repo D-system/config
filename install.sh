@@ -43,6 +43,7 @@ gem update --system
 
 # Change how fast the keyboard repeat keys
 defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 defaults write com.apple.Accessibility KeyRepeatDelay "0.5"
 defaults write com.apple.Accessibility KeyRepeatInterval "0.083333333"
 
