@@ -14,7 +14,7 @@ brew install --cask \
     visual-studio-code \
     docker \
     slack \
-    wezterm \
+    ghostty \
     meetingbar \
     monitorcontrol \
     keycastr \
