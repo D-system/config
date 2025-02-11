@@ -8,6 +8,9 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 # Load SCM Breeze first because it conflict with something when outside of a git project
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
+# Expand alias
+zstyle ':completion:*' completer _expand_alias _complete _ignored
+
 alias ls='ls -G'
 alias l='ls -lh'
 alias la='l -a'
