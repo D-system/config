@@ -7,12 +7,20 @@ CURRENT_DIR=$( dirname -- "$( readlink -f -- "$0"; )" );
 git clone git@github.com:scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh
 
 # Install command line tools
-brew install the_silver_searcher ripgrep fd starship jq eza bat fzf pygitup zsh-syntax-highlighting zsh-autosuggestions
+brew install \
+    the_silver_searcher \
+    ripgrep \
+    eza fd bat \
+    jq fzf \
+    starship \
+    zsh-syntax-highlighting \
+    zsh-autosuggestions \
+    pygitup \
+    docker colima
 
 brew install --cask \
     google-chrome \
     visual-studio-code \
-    docker \
     slack \
     ghostty \
     meetingbar \
