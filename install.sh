@@ -31,8 +31,7 @@ brew install --cask \
     xnapper \
     hiddenbar \
     dash@6 \
-    rectangle \
-    # flameshot \
+    rectangle
 
 cp $CURRENT_DIR/zshrc.sh ~/.zshrc
 cp $CURRENT_DIR/gitconfig ~/.gitconfig
