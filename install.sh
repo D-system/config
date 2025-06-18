@@ -41,7 +41,6 @@ cp $CURRENT_DIR/ssh_config ~/.ssh/config
 curl https://mise.run | sh
 eval "$($HOME/.local/bin/mise activate zsh)"
 mise use -g python ruby node
-gem update --system
 
 
 
