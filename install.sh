@@ -39,7 +39,7 @@ cp $CURRENT_DIR/gemrc ~/.gemrc
 cp $CURRENT_DIR/ssh_config ~/.ssh/config
 
 curl https://mise.run | sh
-source ~/.zshrc
+eval "$($HOME/.local/bin/mise activate zsh)"
 mise use -g python ruby node
 gem update --system
 
