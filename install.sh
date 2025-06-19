@@ -17,6 +17,7 @@ brew install \
     zsh-syntax-highlighting \
     zsh-autosuggestions \
     pygitup \
+    libyaml \
     docker colima
 
 brew install --cask \
