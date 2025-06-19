@@ -2,6 +2,8 @@
 autoload -Uz compinit
 compinit
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 eval "$(starship init zsh)"
 eval "$($HOME/.local/bin/mise activate zsh)"
 
