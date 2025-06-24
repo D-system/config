@@ -1,6 +1,7 @@
 # compinit: helper for auto-completion
+FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
 autoload -Uz compinit
-compinit
+compinit -i
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

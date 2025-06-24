@@ -16,6 +16,7 @@ brew install \
     starship \
     zsh-syntax-highlighting \
     zsh-autosuggestions \
+    zsh-completions \
     pygitup \
     libyaml \
     docker colima
