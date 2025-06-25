@@ -70,6 +70,16 @@ defaults write com.apple.dock "mru-spaces" -bool false && killall Dock
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 
+VSCODE_SETTINGS_FILE="$HOME/Library/Application Support/Code/User/settings.json"
+if [ ! -f "$VSCODE_SETTINGS_FILE" ]; then
+    # If the file does not exist, create it with empty JSON content
+    echo "{}" > "$VSCODE_SETTINGS_FILE"
+fi
+jq '.["editor.renderWhitespace"] = "trailing"' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
+jq '.["files.trimTrailingWhitespace"] = true' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
+jq '.["git.blame.editorDecoration.enabled"] = true' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
+
+
 echo "##########################"
 echo "## To download manually ##"
 echo "##########################"
