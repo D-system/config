@@ -36,7 +36,7 @@ alias grep='grep --color=auto -i'
 alias be='bundle exec'
 alias r='rails'
 alias c="code"
-
+alias gdd="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
 
 serve() {
   ruby -run -ehttpd -- --port $1
