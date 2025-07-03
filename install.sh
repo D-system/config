@@ -78,7 +78,7 @@ fi
 jq '.["editor.renderWhitespace"] = "trailing"' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
 jq '.["files.trimTrailingWhitespace"] = true' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
 jq '.["git.blame.editorDecoration.enabled"] = true' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
-
+jq '.["workbench.tree.indent"] = 18' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
 
 echo "##########################"
 echo "## To download manually ##"
