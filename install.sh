@@ -31,7 +31,7 @@ brew install --cask \
     keycastr \
     shottr \
     xnapper \
-    hiddenbar \
+    jordanbaird-ice \
     dash@6 \
     rectangle
 
