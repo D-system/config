@@ -75,10 +75,20 @@ if [ ! -f "$VSCODE_SETTINGS_FILE" ]; then
     # If the file does not exist, create it with empty JSON content
     echo "{}" > "$VSCODE_SETTINGS_FILE"
 fi
-jq '.["editor.renderWhitespace"] = "trailing"' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
-jq '.["files.trimTrailingWhitespace"] = true' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
-jq '.["git.blame.editorDecoration.enabled"] = true' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
-jq '.["workbench.tree.indent"] = 18' "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
+
+set_vs_code_settings() {
+    local command="$1"
+    jq "$command" "$VSCODE_SETTINGS_FILE" > "$VSCODE_SETTINGS_FILE.tmp" && mv "$VSCODE_SETTINGS_FILE.tmp" "$VSCODE_SETTINGS_FILE"
+}
+
+set_vs_code_settings '.["editor.renderWhitespace"] = "trailing"'
+set_vs_code_settings '.["files.trimTrailingWhitespace"] = true'
+set_vs_code_settings '.["git.blame.editorDecoration.enabled"] = true'
+set_vs_code_settings '.["workbench.tree.indent"] = 18'
+
+
+code --install-extension ms-vscode.sublime-keybindings
+code --install-extension shardulm94.trailing-spaces
 
 echo "##########################"
 echo "## To download manually ##"
