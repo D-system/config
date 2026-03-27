@@ -1,5 +1,6 @@
 # compinit: helper for auto-completion
-FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
+export FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
+export FPATH="$HOME/.zfunc:${FPATH}"
 autoload -Uz compinit
 compinit -i
 
@@ -36,7 +37,9 @@ alias grep='grep --color=auto -i'
 alias be='bundle exec'
 alias r='rails'
 alias c="code"
+alias rspec='bundle exec rspec'
 alias gdd="git diff --name-only --relative --diff-filter=d | xargs bat --diff"
+
 
 serve() {
   ruby -run -ehttpd -- --port $1
@@ -58,3 +61,8 @@ bindkey '^I' $fzf_default_completion
 # Command highlight
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+eval "$(mise activate zsh)"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH=./bin:$PATH
+
