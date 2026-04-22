@@ -12,7 +12,7 @@ brew install \
     the_silver_searcher \
     ripgrep \
     eza fd bat \
-    jq fzf \
+    jq fzf jnv\
     starship \
     zsh-syntax-highlighting \
     zsh-autosuggestions \
