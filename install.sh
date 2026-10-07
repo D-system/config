@@ -7,33 +7,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Download CSM Breeze (git shortcut and utils)
 git clone git@github.com:scmbreeze/scm_breeze.git ~/.scm_breeze && ~/.scm_breeze/install.sh
 
-# Install command line tools
-brew install \
-    the_silver_searcher \
-    ripgrep \
-    eza fd bat \
-    jq fzf jnv\
-    starship \
-    zsh-syntax-highlighting \
-    zsh-autosuggestions \
-    zsh-completions \
-    pygitup \
-    libyaml \
-    docker colima
-
-brew install --cask \
-    google-chrome \
-    visual-studio-code \
-    slack \
-    ghostty \
-    meetingbar \
-    monitorcontrol \
-    keycastr \
-    shottr \
-    xnapper \
-    jordanbaird-ice \
-    dash@6 \
-    rectangle
+# Install Homebrew packages
+brew bundle --file="$CURRENT_DIR/Brewfile"
 
 cp $CURRENT_DIR/zshrc.sh ~/.zshrc
 cp $CURRENT_DIR/gitconfig ~/.gitconfig
